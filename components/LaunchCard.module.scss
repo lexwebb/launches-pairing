@@ -1,0 +1,20 @@
+.card {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.split {
+  > div {
+    flex: 1;
+  }
+}

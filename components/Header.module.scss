@@ -1,0 +1,14 @@
+.container {
+  margin: 1rem 0 2rem;
+  display: flex;
+  align-items: flex-end;
+
+  .logo {
+    width: 210px;
+  }
+
+  p {
+    font-size: 24px;
+    height: 26px;
+  }
+}

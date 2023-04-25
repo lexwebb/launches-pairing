@@ -1,19 +1,20 @@
 .separator {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+
+  > p {
+    flex: 1;
+  }
+
+  &:after,
+  &:before {
+    content: "//////////////////////////////////////////////////////";
     overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
-    display: flex;
-    gap: 0.5rem;
-
-    > p {
-        flex: 1;
-    }
-
-    &:after,
-    &:before {
-        content: "//////////////////////////////////////////////////////";
-        overflow: hidden;
-        white-space: nowrap;
-        color: grey;
-    }
+    color: grey;
+  }
 }

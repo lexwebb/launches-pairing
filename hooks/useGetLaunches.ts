@@ -3,7 +3,7 @@ import { Launch } from '../dto/launch';
 import { Payload } from '../dto/payloads';
 import { ChangeTypeOfKeys } from '../util';
 
-type LaunchWithPayload = ChangeTypeOfKeys<Launch, 'payloads', Payload[]>;
+export type LaunchWithPayload = ChangeTypeOfKeys<Launch, 'payloads', Payload[]>;
 
 const useGetLaunches = () => {
   return useQuery<Paged<LaunchWithPayload>>({
