@@ -9,7 +9,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 1rem;
 }
 
 @media (max-width: 769px) {
@@ -20,4 +20,53 @@
 
 .card {
   min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.split > div {
+  flex: 1;
+}
+
+.launchStatus {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --bg-one: rgb(32, 136, 32);
+  --bg-two: rgb(27, 116, 27);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--bg-one),
+    var(--bg-one) 0.75rem,
+    var(--bg-two) 0.75rem,
+    var(--bg-two) 1.5rem
+  );
+}
+
+.launchStatus.success {
+  --bg-one: rgb(32, 136, 32);
+  --bg-two: rgb(27, 116, 27);
+}
+
+.launchStatus.failed {
+  --bg-one: rgb(246, 55, 55);
+  --bg-two: rgb(205, 46, 46);
+}
+
+.launchStatus p {
+  background-color: var(--bg-one);
+  padding: 0 0.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  text-shadow: 2px 2px 2px var(--bg-two);
 }

@@ -11,10 +11,13 @@ const useGetLaunches = () => {
     queryFn: () =>
       fetch('https://api.spacexdata.com/v5/launches/query', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           query: {},
           options: {
-            limit: 20,
+            limit: 10,
             populate: ['payloads'],
           },
         }),

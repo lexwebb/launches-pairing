@@ -3,6 +3,8 @@ import styles from '../styles/Home.module.css';
 import { Card, CardContent, Typography } from '@mui/material';
 import useGetLaunches from '../hooks/useGetLaunches';
 import Image from 'next/image';
+import Separator from '../components/Separator';
+import classNames from 'classnames';
 
 export default function Home() {
   const { data } = useGetLaunches();
@@ -19,33 +21,49 @@ export default function Home() {
         {data?.docs.map((launch) => (
           <Card key={launch.id} data-testid="card" className={styles.card}>
             <CardContent>
-              <Typography fontWeight="bold" sx={{ fontSize: 32 }} data-testid="card-title">
-                {launch.name}
-              </Typography>
-              <Typography color="text.secondary" data-testid="card-date">
-                Launched On: {new Date(launch.date_utc).toLocaleDateString()}
-              </Typography>
+              <div className={styles.header}>
+                <Typography fontWeight="bold" sx={{ fontSize: 32 }} data-testid="card-title">
+                  {launch.name}
+                </Typography>
+                <Typography color="text.secondary" data-testid="card-date">
+                  {new Date(launch.date_utc).toLocaleDateString()}
+                </Typography>
+              </div>
               {launch.cores[0] && (
                 <Typography color="text.secondary" data-testid="card-core">
                   Core: {launch.cores[0].core}
                 </Typography>
               )}
-              {launch.payloads.map((payload, index) => (
-                <Typography key={payload.id} color="text.secondary" data-testid={`card-payload-${index}`}>
-                  Payload: {payload.name}
-                </Typography>
-              ))}
-              <Image
-                src={launch.links.patch.small}
-                alt="Launch Patch"
-                width="200"
-                height={200}
-                data-testid="card-image"
-              />
-              <Typography color="text.secondary" data-testid="card-success">
-                Success: {launch.success ? 'true' : 'false'}
-              </Typography>
+              <div className={styles.split}>
+                <div>
+                  <Separator title="PAYLOADS" />
+                  <ul>
+                    {launch.payloads.map((payload, index) => (
+                      <li key={payload.id}>
+                        <Typography color="text.secondary" data-testid={`card-payload-${index}`}>
+                          {payload.name}
+                        </Typography>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <Separator title="PATCH" />
+                  <Image
+                    src={launch.links.patch.small}
+                    alt="Launch Patch"
+                    width="200"
+                    height={200}
+                    data-testid="card-image"
+                  />
+                </div>
+              </div>
             </CardContent>
+            <div className={classNames(styles.launchStatus, launch.success ? styles.success : styles.failed)}>
+              <Typography color="text.secondary" data-testid="card-success">
+                {launch.success ? 'SUCCESS' : 'FAILURE'}
+              </Typography>
+            </div>
           </Card>
         ))}
       </main>

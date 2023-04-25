@@ -20,7 +20,8 @@
     "next": "^13.1.2",
     "prettier": "^2.6.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.62.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
