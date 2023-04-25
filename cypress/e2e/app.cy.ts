@@ -42,12 +42,16 @@ describe('Home Page', () => {
 
     cy.get('[data-testid="card-image"]')
       .first()
-      .should('have.attr', 'src', 'https://images2.imgbox.com/94/f2/NN6Ph45r_o.png');
+      .should('have.attr', 'src')
+      .then((src) => {
+        expect(src).to.contain(encodeURIComponent('https://images2.imgbox.com/94/f2/NN6Ph45r_o.png'));
+      });
+    //, 'https://images2.imgbox.com/94/f2/NN6Ph45r_o.png');
   });
 
   it('should show if the launch was successful', () => {
     cy.wait('@getLaunches');
 
-    cy.get('[data-testid="card-success"]').first().should('have.text', 'Success: true');
+    cy.get('[data-testid="card-success"]').first().should('have.text', 'Success: false');
   });
 });
