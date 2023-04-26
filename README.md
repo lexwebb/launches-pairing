@@ -2,7 +2,7 @@
 
 I have implemented the basic features as mentioned below in the task. I have not implemented any additional features like sorting or filtering as I did not have time to do so.
 
-I have implemented tests using cypress as this was the most familiar and quickest option to me at this moment. I did not feel like there was any logic/pure functions complex enough to warrant unit tests.
+I have implemented tests using cypress as this was the most familiar and quickest option to me at this moment. I did not feel like there was any logic/pure functions complex enough to warrant unit tests, so I decided to cover any conditional cases in my cypress tests.
 
 You can find the tests here: ```cypress\e2e\app.cy.ts```.
 
