@@ -36,7 +36,7 @@ const Content = () => {
     return (
       <div className={styles.launches}>
         {Array.from('x'.repeat(10)).map((_, i) => (
-          <Card sx={{ height: 500 }} data-testid="card-loading"></Card>
+          <Card sx={{ height: 500 }} key={i} data-testid="card-loading" />
         ))}
       </div>
     );

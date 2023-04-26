@@ -1,4 +1,4 @@
-type Paged<T> = {
+export type Paged<T> = {
   docs: T[];
   totalDocs: number;
   offset: number;

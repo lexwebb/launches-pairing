@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Launch } from '../dto/launch';
 import { Payload } from '../dto/payloads';
 import { ChangeTypeOfKeys } from '../util';
+import { Paged } from '../dto/paged';
 
 export type LaunchWithPayload = ChangeTypeOfKeys<Launch, 'payloads', Payload[]>;
 

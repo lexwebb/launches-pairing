@@ -1,3 +1,24 @@
+## Lex's Comments
+
+I have implemented the basic features as mentioned below in the task. I have not implemented any additional features like sorting or filtering as I did not have time to do so.
+
+I have implemented tests using cypress as this was the most familiar and quickest option to me at this moment.
+
+In order to run the tests in the interactive cypress window you will need to have the application running and then run the following command:
+
+```bash
+npm run cypress
+```
+
+This will open the cypress window and you can then select the test you wish to run.
+
+Alternatively you can run cypress headless as you would in CI to get console test output by running the following commands:
+
+```bash
+npm run build
+npm run test
+```
+
 ## Getting Started
 
 First, run the development server:

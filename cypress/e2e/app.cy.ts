@@ -88,3 +88,6 @@ describe('Home Page', () => {
     });
   });
 });
+
+// Works around next cypress tsconfig not playing nice with each other as next does not like isolated modules
+export {};
