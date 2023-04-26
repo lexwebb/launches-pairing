@@ -11,6 +11,18 @@ describe('Home Page', () => {
 
       cy.get('[data-testid="card-loading"]').should('have.length', 10);
     });
+
+    it('should call the API with custom query to load the payload information and set a result limit', () => {
+      cy.wait('@getLaunches').then((interception) => {
+        expect(interception.request.body).to.deep.equal({
+          query: {},
+          options: {
+            limit: 10,
+            populate: ['payloads'],
+          },
+        });
+      });
+    });
   });
 
   describe('when the page and data is loaded', () => {

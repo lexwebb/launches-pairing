@@ -2,7 +2,9 @@
 
 I have implemented the basic features as mentioned below in the task. I have not implemented any additional features like sorting or filtering as I did not have time to do so.
 
-I have implemented tests using cypress as this was the most familiar and quickest option to me at this moment.
+I have implemented tests using cypress as this was the most familiar and quickest option to me at this moment. I did not feel like there was any logic/pure functions complex enough to warrant unit tests.
+
+You can find the tests here: ```cypress\e2e\app.cy.ts```.
 
 In order to run the tests in the interactive cypress window you will need to have the application running and then run the following command:
 
