@@ -3,6 +3,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .imageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
 }
 
 .header {

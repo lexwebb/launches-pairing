@@ -2,9 +2,8 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import useGetLaunches from '../hooks/useGetLaunches';
 import LaunchCard from '../components/LaunchCard';
-import SpaceXLogo from '../components/SpaceXLogo';
 import Header from '../components/Header';
-import { Card } from '@mui/material';
+import { Alert, Card } from '@mui/material';
 
 export default function Home() {
   return (
@@ -24,13 +23,20 @@ export default function Home() {
 }
 
 const Content = () => {
-  const { data, isLoading } = useGetLaunches();
+  const { data, isLoading, error } = useGetLaunches();
+
+  if (error)
+    return (
+      <Alert severity="error" data-testid="launches-error">
+        Error loading launches
+      </Alert>
+    );
 
   if (isLoading)
     return (
       <div className={styles.launches}>
         {Array.from('x'.repeat(10)).map((_, i) => (
-          <Card sx={{ height: 500 }}></Card>
+          <Card sx={{ height: 500 }} data-testid="card-loading"></Card>
         ))}
       </div>
     );

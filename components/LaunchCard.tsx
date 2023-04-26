@@ -36,7 +36,7 @@ const LaunchCard: React.FC<{ launch: LaunchWithPayload }> = ({ launch }) => {
             ))}
           </ul>
         </div>
-        <div>
+        <div className={styles.imageContainer}>
           <Separator title="PATCH" />
           <Image src={launch.links.patch.small} alt="Launch Patch" width="200" height={200} data-testid="card-image" />
         </div>
